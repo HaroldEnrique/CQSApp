@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:padding="30dp"
+    android:gravity="center">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Nombres"
+            android:textAllCaps="true"
+            android:textColor="#1d1a1a"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edtname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/et_bg_black"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#1d1a1a"
+            android:hint="Nombres"
+            android:textSize="17sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Apellidos"
+            android:textAllCaps="true"
+            android:textColor="#1d1a1a"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/et_bg_black"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#1d1a1a"
+            android:hint="Apellidos"
+            android:textSize="17sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Fecha de nacimiento"
+            android:textAllCaps="true"
+            android:textColor="#1d1a1a"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edt_birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/et_bg_black"
+            android:cursorVisible="true"
+            android:editable="false"
+            android:fontFamily="sans-serif-light"
+            android:hint="Fecha de Nacimiento"
+            android:inputType="none"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#1d1a1a"
+            android:textSize="17sp"
+            tools:clickable="true" />
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Género"
+            android:textAllCaps="true"
+            android:textColor="#1d1a1a"
+            android:textSize="15sp" />
+
+
+        <RadioGroup
+            android:id="@+id/rdgroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_marginBottom="17dp">
+
+            <RadioButton
+                android:id="@+id/rdbmas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/rdbfem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Femenino" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnstep1"
+            android:layout_width="212dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/reg_btn_style"
+            android:gravity="center"
+            android:text="Siguiente"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+    
+</RelativeLayout>
