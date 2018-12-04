@@ -20,6 +20,7 @@ public class Signup_view_page_adapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
+
         return fragmentList.get(i);
     }
 

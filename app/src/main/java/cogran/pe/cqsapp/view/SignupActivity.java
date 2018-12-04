@@ -22,17 +22,15 @@ import cogran.pe.cqsapp.fragments.Signup_second_frag;
 import cogran.pe.cqsapp.fragments.Signup_third_frag;
 import cogran.pe.cqsapp.presenter.PersonaPresenter;
 import cogran.pe.cqsapp.presenter.PersonaPresenterImpl;
+import cogran.pe.cqsapp.util.CustomViewPager;
 
-public class SignupActivity extends AppCompatActivity  {
+public class SignupActivity extends AppCompatActivity implements Signup_first_frag.SendMessage , Signup_second_frag.SendMessageTwo  {
 
 
 
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
-    private ViewPager viewPager;
-
-
-
+    public static CustomViewPager viewPager;
 
 
 
@@ -42,12 +40,9 @@ public class SignupActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_signup);
 
 
-
-
-
         tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbarid);
-        viewPager = (ViewPager) findViewById(R.id.viewpager_id);
+        viewPager = (CustomViewPager) findViewById(R.id.viewpager_id);
 
         Signup_view_page_adapter adapter = new Signup_view_page_adapter(getSupportFragmentManager());
         adapter.AddFragment(new Signup_first_frag(), "First");
@@ -56,9 +51,6 @@ public class SignupActivity extends AppCompatActivity  {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
-
-
 
         LinearLayout tabStrip = ((LinearLayout)tabLayout.getChildAt(0));
         for(int i = 0; i < tabStrip.getChildCount(); i++) {
@@ -70,7 +62,10 @@ public class SignupActivity extends AppCompatActivity  {
             });
         }
 
-        final View touchView = findViewById(R.id.viewpager_id);
+
+        viewPager.setPagingEnabled(false);
+
+        /*final View touchView = findViewById(R.id.viewpager_id);
         touchView.setOnTouchListener(new View.OnTouchListener()
         {
             @Override
@@ -78,10 +73,26 @@ public class SignupActivity extends AppCompatActivity  {
             {
                 return true;
             }
-        });
+        });*/
+
 
 
     }
 
 
+   @Override
+    public void sendData(String name, String lastnames, String birthdate, String selectid) {
+        String tag = "android:switcher:" + R.id.viewpager_id + ":" + 1;
+       System.out.println("tagg send data > " +tag);
+        Signup_second_frag f = (Signup_second_frag) getSupportFragmentManager().findFragmentByTag(tag);
+        f.receivedFromFragment1(name, lastnames, birthdate, selectid);
+    }
+
+    @Override
+    public void sendDataTwo(String name, String lastnames, String birthdate, String selectid, String celular, String correo, String direccion) {
+        String tag = "android:switcher:" + R.id.viewpager_id + ":" + 2;
+        System.out.println("tagg send data two> " +tag);
+        Signup_third_frag t= (Signup_third_frag) getSupportFragmentManager().findFragmentByTag(tag);
+        t.receivedFromFragment2(name, lastnames, birthdate, selectid, celular, correo, direccion);
+    }
 }

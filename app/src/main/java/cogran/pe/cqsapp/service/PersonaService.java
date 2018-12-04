@@ -22,7 +22,7 @@ public interface PersonaService {
 
     @POST("pais/{id}/createPersonaUsuario")
     @FormUrlEncoded
-    Call<ResponseBody> crearPersona(@Field("nombre") String nombres,
+    Call<ResponseBody> crearPersona(@Path("id") String idpais, @Field("nombre") String nombres,
                                     @Field("apMaterno") String apMaterno,
                                     @Field("apPaterno") String apPaterno,
                                     @Field("edad") String edad,

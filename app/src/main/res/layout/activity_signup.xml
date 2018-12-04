@@ -16,7 +16,7 @@
         android:fitsSystemWindows="true"
         android:gravity="center"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:elevation="3px">
+        app:elevation="3dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/htab_collapse_toolbar"
@@ -31,7 +31,7 @@
                 android:id="@+id/htab_header"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_profile"
+                android:background="@drawable/conquis_back"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"/>
@@ -61,14 +61,13 @@
                 android:background="@color/colorPrimary"
                 app:tabSelectedTextColor="@android:color/white"
                 app:tabIndicatorColor="@color/tabindicatorcolor"
-
                 app:tabTextColor="@color/tabtextcolor" />
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v4.view.ViewPager
+    <cogran.pe.cqsapp.util.CustomViewPager
         android:id="@+id/viewpager_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
